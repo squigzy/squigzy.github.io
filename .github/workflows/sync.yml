@@ -1,8 +1,6 @@
 name: Sync
 
 on:
-  repository_dispatch:
-    types: [sync]
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
