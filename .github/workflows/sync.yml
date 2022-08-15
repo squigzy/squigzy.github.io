@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: squigglezworth/dotfiles
+          repository: squigzy/squigzy.github.io
           token: ${{ github.token }}
           fetch-depth: 0
       - name: Configure git
