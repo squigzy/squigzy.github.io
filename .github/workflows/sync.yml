@@ -12,7 +12,7 @@ jobs:
       - uses: tgymnich/fork-sync@v1.4
         with:
           token: ${{ secrets.TOKEN }}
-          owner: squigzy
+          owner: squigglezworth
           base: master
           head: master
           auto_approve: true
