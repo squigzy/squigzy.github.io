@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: tgymnich/fork-sync@v1.4
         with:
-          token: ${{ secrets.TOKEN }}
           owner: squigglezworth
           base: master
           head: master
-          auto_approve: true
