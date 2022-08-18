@@ -1,3 +1,6 @@
+title: .dotfiles from squigz
+description: config files and whatnot from <a href="https://github.com/squigglezworth"><b>@squigglezworth</b></a>
+
 include: [ .preseed, .setup/ ]
 
 remote_theme: pages-themes/midnight@v0.2.0
