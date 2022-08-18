@@ -18,3 +18,7 @@ code {
   margin: 2px;
   padding: 2px 6px;
 }
+sup code {
+  display: inline;
+  font-size: 95%;
+}
