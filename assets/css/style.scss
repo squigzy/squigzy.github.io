@@ -2,7 +2,8 @@
 ---
 
 @import "{{ site.theme }}";
-section, div {
+
+section, .wrapper {
   max-width: 900px;
 }
 section {
