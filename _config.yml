@@ -1,1 +1,3 @@
 include: [ .preseed, .setup/ ]
+
+show_dir_listing: true
