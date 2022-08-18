@@ -13,7 +13,6 @@ section #title {
   margin: 0 0 0 0;
 }
 code {
-  display: inline-block;
   background-color: rgba(220, 224, 228, 0.1);
   margin: 2px;
   padding: 2px 6px;
@@ -23,5 +22,5 @@ sup code {
   font-size: 95%;
 }
 a {
-  text-decoration:;
+  text-decoration: underline;
 }
