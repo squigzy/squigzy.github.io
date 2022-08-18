@@ -7,4 +7,5 @@ include: [ .preseed, .setup/ ]
 # plugins:
 # - jekyll-remote-theme
 
+markdown: kramdown
 theme: jekyll-theme-midnight
