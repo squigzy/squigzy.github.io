@@ -82,9 +82,10 @@ ln -fs $PWD/vim/vimrc $HOME/.vimrc
 ln -fs $PWD/vim/vim $HOME/.vim
 echoDone
 
-# echo -ne "\t\t Configuring sublime ... "
-# rm -rf $HOME/.config/sublime-text
-# ln -fs $PWD/sublime-text/ $HOME/.config/sublime-text; echoDone
+echo -ne "\t\t Configuring sublime ... "
+rm -rf $HOME/.config/sublime-text
+cp $PWD/sublime-text/Local/session.default $PWD/sublime-text/Local/Session.sublime_session
+ln -fs $PWD/sublime-text/ $HOME/.config/sublime-text; echoDone
 
 echo -ne "\t\t Configuring rofi-blezz ... "
 rm -rf $HOME/.config/blezz
@@ -106,8 +107,7 @@ echo -ne "\t\t Configuring picom ... "
 ln -fs $PWD/picom/picom.conf $HOME/.config/picom.conf; echoDone
 
 echo -ne "\t\t Configuring git ... "
-git config --global user.name "squigglezworth"
-git config --global core.editor "subl -w"; echoDone
+ln -fs $PWD/.gitconfig $HOME/.gitconfig
 
 
 ##  ███    ███ ██    ██ ███████ ██  ██████ 
