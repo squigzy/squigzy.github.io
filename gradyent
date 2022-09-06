@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<style>
+    html {
+        height:100%;
+    }
+    body {
+        --dark: hsla(0,0%,0%,1);
+        --medium: hsla(0,0%,0%,1);
+        --light: hsla(0,0%,0%,1);
+        --angle: 0deg;
+        --perc: 0%;
+        height: 100%;
+        background: linear-gradient(var(--angle), var(--dark) 0%, var(--medium) var(--perc), var(--light) 100%);
+    }
+    div {
+        max-width: fit-content;
+        position: relative;
+        top: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        padding-right: 15px;
+        padding-left: 15px;
+        color: #d6d6d6;
+        background: #1c1c1c90;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+</style>
+<script>
+    var i = 0;
+    var j = 50;
+    var k = 0;
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function percChanger() {
+        while (j == 50) {
+            if (j == 50) {
+                for (j=50; j<66; j++) {
+                    await sleep(100);
+                }
+            }
+            if (j == 66) {
+                for (j=66; j>50; j--) {
+                    await sleep(100);
+                }
+            }
+        }
+    }
+    async function degChanger() {
+        for (k=0; k<=360; k++) {
+            await sleep(200);
+            k == 360 ? k = 0 : 0;
+        }
+    }
+    async function colorChanger() {
+        for (i=0; i<=360; i++) {
+            prop1 = 'hsla(' + i + ',75%,70%,1)';
+            prop2 = 'hsla(' + (i+30) + ',65%,70%,1)';
+            prop3 = 'hsla(' + (i+50) + ',55%,70%,1)';
+            prop4 = k + 'deg';
+            prop5 = j + '%';
+
+            await sleep(100);
+
+            $('body').css({'--dark': prop1,
+                '--medium': prop2,
+                '--light': prop3,
+                '--angle': prop4,
+                '--perc': prop5
+            });
+
+            i == 360 ? i = 0 : 0;
+        }
+    }
+    function toggleFullscreen(elem) {
+        elem = elem || document.documentElement;
+
+        if (!document.fullscreenElement && !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement && !document.msFullscreenElement) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+        }
+    }
+
+    $(function() {
+        colorChanger();
+        degChanger();
+        percChanger();
+        $('body').dblclick(function(){toggleFullscreen();});
+        $('#fs').delay(3000).hide('fade');
+    });
+</script>
+</head>
+<body>
+    <div id="fs">Double click to go full screen</div>
+</body>
+</html>
